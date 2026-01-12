@@ -1,25 +1,17 @@
-name: Deploy PRISM to GitHub Pages
+name: Deploy to External Repo (damaelee8.github.io)
 
 on:
-  # Push triggers are disabled by default for template users.
-  # Uncomment the lines below to enable automatic deployment on push.
-  # push:
-  #  branches: 
-  #      - main
-  #      - ci
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  push:
+    branches:
+      - main  # 只要你推送源码到 main 分支，就会触发
+  workflow_dispatch: # 保留手动触发按钮
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Source
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -32,21 +24,17 @@ jobs:
         run: npm install
 
       - name: Build site
-        run: npm run build
+        # 这里的 --webpack 是为了解决你之前遇到的 Turbopack 内存溢出错误
+        run: npm run build -- --webpack 
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          # 记得在仓库 A 的 Settings 里设置这个密钥（Secret）
+          API_TOKEN_GITHUB: ${{ secrets.MY_DEPLOY_TOKEN }}
         with:
-          path: ./out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          source-directory: 'out'
+          destination-github-username: 'damaelee8'
+          destination-repository-name: 'damaelee8.github.io'
+          user-email: damaelee8@gmail.com # 换成你的 GitHub 邮箱
+          target-branch: main
