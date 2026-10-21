@@ -3,25 +3,31 @@ title = "Awards"
 description = "Honors and awards I have received."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "University-Level Outstanding Graduation Project Award"
+subtitle = "CUMTB"
+date = "2026"
+content = "Recognized for an outstanding graduation project. The award included a cash prize."
+
+[[items]]
+title = "Scholarship"
+subtitle = "CUMTB"
 date = "2025"
-content = "Description of the award."
+content = "Awarded a scholarship."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "S Prize"
+subtitle = "Asia and Pacific Mathematical Contest in Modeling (APMCM)"
+date = "2025"
+content = "Received the S Prize in the 2025 APMCM."
+
+[[items]]
+title = "Scholarship"
+subtitle = "CUMTB"
 date = "2024"
-content = "Description of the award."
+content = "Awarded a scholarship."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "Scholarship"
+subtitle = "CUMTB"
 date = "2023"
-content = "Description of the award."
-
-[[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2022"
-content = "Description of the award."
+content = "Awarded a scholarship."
