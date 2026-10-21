@@ -1,3 +1,3 @@
 I am a student at the School of Science, CUMTB.
 
-My current research focuses on math and deep learning.
+My current research focuses on math and machine learning.
