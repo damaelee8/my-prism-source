@@ -1,10 +1,17 @@
 type = "card"
 title = "Teaching"
-description = "Courses I have taught or assisted with."
+description = "Academic presentations and peer instruction."
 
 [[items]]
-title = "Example Course"
-subtitle = "Teaching Assistant"
-date = "2024"
-content = "Description of the course and responsibilities."
-tags = ["Undergraduate", "CS"]
+title = "Academic Presentation"
+subtitle = "Academic Talk"
+content = "Prepared and delivered an academic presentation, organizing key ideas into a clear and accessible talk for an audience."
+image = "/teaching/academic-presentation.jpg"
+tags = ["Academic Presentation"]
+
+[[items]]
+title = "Peer Learning Group Mentor"
+subtitle = "Undergraduate Study Group"
+content = "Led a study group for junior students, guiding collaborative review sessions and answering questions to help them work through challenging course concepts."
+image = "/teaching/peer-learning-group.jpg"
+tags = ["Peer Mentoring", "Study Group"]

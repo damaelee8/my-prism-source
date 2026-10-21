@@ -39,6 +39,14 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                         {item.subtitle && (
                             <p className={`${embedded ? "text-sm" : "text-base"} text-accent font-medium mb-3`}>{item.subtitle}</p>
                         )}
+                        {item.image && (
+                            <img
+                                src={item.image}
+                                alt={item.title}
+                                loading="lazy"
+                                className="mt-4 mb-4 w-full max-h-[28rem] rounded-lg object-contain bg-neutral-50 dark:bg-neutral-800"
+                            />
+                        )}
                         {item.content && (
                             <p className={`${embedded ? "text-sm" : "text-base"} text-neutral-600 dark:text-neutral-500 leading-relaxed`}>
                                 {item.content}
